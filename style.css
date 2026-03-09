@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: white;
+    overflow-x: hidden;
+}
+
+.video-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background-image: url('tree.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,100,0,0.4));
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #008000;
+}
+
+.section {
+    min-height: 100vh;
+    padding: 120px 80px 80px;
+    text-align: center;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home h1 {
+    font-size: 3rem;
+}
+
+.home span {
+    background: linear-gradient(45deg, #00ff00, #008000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.home p {
+    margin-top: 10px;
+    font-size: 1.3rem;
+}
+
+.buttons {
+    margin-top: 35px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn {
+    padding: 14px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.primary {
+    background: linear-gradient(45deg, #00ff00, #008000);
+    color: black;
+}
+
+.secondary {
+    border: 2px solid #00ff00;
+    color: #00ff00;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px rgba(0,255,0,0.7);
+}
+
+.glass {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    margin: 60px auto;
+    max-width: 1000px;
+}
+
+.skills {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.skill {
+    padding: 15px 30px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.15);
+}
+
+.projects {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.card {
+    width: 260px;
+    padding: 25px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 15px;
+}
+
+footer {
+    background: rgba(0,0,0,0.9);
+    padding: 20px;
+    text-align: center;
+}
+
+
+.skill-bar {
+    width: 70%;
+    margin: 25px auto;
+    text-align: left;
+}
+
+.skill-bar span {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.bar {
+    width: 100%;
+    height: 14px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #00ff00, #008000);
+    animation: loadSkill 2s ease forwards;
+}
+
+.progress.html { width: 95%; }
+.progress.css { width: 90%; }
+.progress.js { width: 75%; }
+.progress.java { width: 70%; }
+.progress.git { width: 65%; }
+
+@keyframes loadSkill {
+    from {
+        width: 0;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 15px 25px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .section {
+        padding: 100px 25px 60px;
+    }
+
+    .home h1 {
+        font-size: 2.2rem;
+    }
+
+    .home p {
+        font-size: 1.1rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 260px;
+        text-align: center;
+    }
+
+    .glass {
+        margin: 40px 10px;
+    }
+
+    .skill-bar {
+        width: 90%;
+    }
+
+    .projects {
+        gap: 20px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
